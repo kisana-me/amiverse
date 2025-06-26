@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 905) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_26_042335) do
   create_table "account_achievements", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
     t.bigint "account_id", null: false
     t.bigint "achievement_id", null: false
@@ -577,15 +577,6 @@ ActiveRecord::Schema[7.0].define(version: 905) do
     t.index ["item_id"], name: "index_item_audios_on_item_id"
   end
 
-  create_table "item_canvases", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "canvas_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["canvas_id"], name: "index_item_canvases_on_canvas_id"
-    t.index ["item_id"], name: "index_item_canvases_on_item_id"
-  end
-
   create_table "item_images", charset: "utf8mb4", collation: "utf8mb4_uca1400_ai_ci", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.bigint "image_id", null: false
@@ -1097,8 +1088,6 @@ ActiveRecord::Schema[7.0].define(version: 905) do
   add_foreign_key "invitations", "accounts"
   add_foreign_key "item_audios", "audios"
   add_foreign_key "item_audios", "items"
-  add_foreign_key "item_canvases", "canvases"
-  add_foreign_key "item_canvases", "items"
   add_foreign_key "item_images", "images"
   add_foreign_key "item_images", "items"
   add_foreign_key "item_list_relations", "item_lists"

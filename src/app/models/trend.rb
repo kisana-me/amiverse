@@ -1,3 +1,3 @@
 class Trend < ApplicationRecord
-  serialize :words, JSON
+  #serialize :words, JSON
 end

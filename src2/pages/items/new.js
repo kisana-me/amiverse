@@ -17,8 +17,7 @@ export default function New() {
     .then(res => {
       if (res.data.is_done) {
         addToast(`投稿しました`)
-        router.push('/')
-        // router.push('/items/' + res.data.item_aid)
+        router.push('/items/' + res.data.item_aid)
       } else {
         console.log(`アイテム作成:サーバーエラー, ${res.data}`)
         addToast('アイテム作成:サーバーエラー')
@@ -39,8 +38,8 @@ export default function New() {
         <form onSubmit={createItem}>
           <label>
             コンテンツ:
+            </label>
             <textarea value={itemContent} onChange={(e) => setItemContent(e.target.value)} />
-          </label>
           <button type="submit">作成</button>
         </form>
       </div>

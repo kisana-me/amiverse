@@ -1,7 +1,7 @@
 class Image < ApplicationRecord
-  enum render_type: { plane: 0, markdown: 1, html: 2, mfm: 3}
-  enum visibility: { visibility_public_share: 0, visibility_do_not_share: 1, visibility_followers_share: 2, visibility_groups_share: 3, visibility_direct_share: 4 }
-  enum limitation: { limitation_public_share: 0, limitation_do_not_share: 1, limitation_followers_share: 2, limitation_groups_share: 3, limitation_direct_share: 4 }
+  enum :render_type, { plane: 0, markdown: 1, html: 2, mfm: 3}
+  enum :visibility, { visibility_public_share: 0, visibility_do_not_share: 1, visibility_followers_share: 2, visibility_groups_share: 3, visibility_direct_share: 4 }
+  enum :limitation, { limitation_public_share: 0, limitation_do_not_share: 1, limitation_followers_share: 2, limitation_groups_share: 3, limitation_direct_share: 4 }
   belongs_to :account
   has_many :item_images
   has_many :items, through: :item_images
