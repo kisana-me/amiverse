@@ -5,7 +5,7 @@ services:
     stdin_open: true
     restart: always
     env_file:
-      - .exa.env
+      - .env
     working_dir: /app
     volumes:
       - ./frontend:/app
